@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Projeto 1 - Processamento Digital de Imagem (SDL3)
 
 Este projeto foi desenvolvido para a disciplina de Computação Visual. O software realiza a manipulação de pixels em tempo real para converter imagens coloridas, analisar seus dados estatísticos e aplicar melhorias de contraste.
@@ -12,13 +11,13 @@ O programa é uma ferramenta de processamento de imagem que utiliza a biblioteca
 3. Histograma: Gera um gráfico de barras na janela secundária representando a frequência de cada tom de cinza (0-255).
 4. Equalização (CDF): Implementa a Função de Distribuição Acumulada para redistribuir as intensidades e expandir o contraste.
 
-## 👥 Contribuições do Grupo
+## Contribuições do Grupo
 * Eduardo Losco: Setup do projeto, estruturação do repositório Git, configuração do arquivo `.gitignore` e documentação inicial.
 * Bruno Roveri: Implementação da lógica de conversão para escala de cinza e salvamento de arquivos (tecla S).
 * Ian Merlino:*Desenvolvimento da interface multi-janela (SDL_Window) e cálculo das estatísticas (Média/Desvio).
 * Otto Mooca: Implementação do algoritmo de equalização de histograma e lógica do botão interativo na GUI.
 
-## 🛠️ Compilação e Execução
+## Compilação e Execução
 
 ### Pré-requisitos
 * Ambiente MSYS2 com o subsistema UCRT64 instalado.
@@ -31,4 +30,3 @@ g++ src/*.cpp -I include -o programa -lSDL3 -lSDL3_image
 
 ### Passo 2: Execução 
 ./programa assets/teste.jpg
-=======
