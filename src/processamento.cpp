@@ -32,6 +32,20 @@ void calcularDados(SDL_Surface* surface, AppData& data) {
         }
     }
 
-    // 2. Cálculo da Média 
-    data.media = (float)(soma / total);
+// 2. Cálculo da Média 
+data.media = (float)(soma / total);
 
+
+ // 3. Cálculo da Variância e Desvio Padrão 
+    
+    double variancia = 0;
+    for(int i=0; i<256; i++) {
+        if(data.histograma[i] > data.maxHist) data.maxHist = data.histograma[i];
+        variancia += data.histograma[i] * pow(i - data.media, 2);
+    }
+    data.desvio = sqrt(variancia / total);
+
+    std::string brilho = (data.media < 85) ? "Escura" : (data.media > 170) ? "Clara" : "Media";
+    std::string contraste = (data.desvio < 30) ? "Baixo" : (data.desvio > 70) ? "Alto" : "Medio";
+
+    
