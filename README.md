@@ -14,7 +14,7 @@ O programa é uma ferramenta de processamento de imagem que utiliza a biblioteca
 ## Contribuições do Grupo
 * Eduardo Losco: Setup do projeto, estruturação do repositório Git, configuração do arquivo `.gitignore` e documentação inicial.
 * Bruno Roveri: Implementação da lógica de conversão para escala de cinza e salvamento de arquivos (tecla S).
-* Ian Merlino:*Desenvolvimento da interface multi-janela (SDL_Window) e cálculo das estatísticas (Média/Desvio).
+* Ian Merlini:Desenvolvimento da interface multi-janela (SDL_Window) e cálculo das estatísticas (Média/Desvio).
 * Otto Mooca: Implementação do algoritmo de equalização de histograma e lógica do botão interativo na GUI.
 
 ## Compilação e Execução
@@ -25,7 +25,6 @@ O programa é uma ferramenta de processamento de imagem que utiliza a biblioteca
 
 ### Passo 1: Compilação
 No terminal UCRT64, navegue até a raiz do projeto e execute:
-
 g++ src/*.cpp -I include -o programa -lSDL3 -lSDL3_image
 
 ### Passo 2: Execução 
