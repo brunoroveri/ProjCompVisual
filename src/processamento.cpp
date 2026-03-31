@@ -1,5 +1,6 @@
 #include "processamento.hpp"
 #include <iostream>
+#include <string>
 
 void converterParaCinza(SDL_Surface* surface) {
     //linhas
@@ -20,4 +21,16 @@ void calcularDados(SDL_Surface* surface, AppData& data) {
     double soma = 0;
     //total de pixel
     int total = surface->w * surface->h;
+
+ // 1. Contagem do Histograma e Soma para Média
+    for (int y = 0; y < surface->h; y++) {
+        for (int x = 0; x < surface->w; x++) {
+            uint8_t r, g, b, a;
+            SDL_ReadSurfacePixel(surface, x, y, &r, &g, &b, &a);
+            data.histograma[r]++;
+        }
+    }
+
+    // 2. Cálculo da Média 
+    data.media = (float)(soma / total);
 
