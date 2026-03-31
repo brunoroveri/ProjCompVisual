@@ -63,7 +63,7 @@ int main(int argc, char* argv[]) {
             if (ev.type == SDL_EVENT_KEY_DOWN && ev.key.key == SDLK_S) {
                 SDL_Surface* pSalvar = data.exibindoEqualizada ? data.equalizedGray : data.originalGray;
                 if (IMG_SavePNG(pSalvar, "output_image.png")) {
-                    std::cout << "Imagem salva como output_image.png!" << std::endl;
+                    std::cout << "Imagem exportada com sucesso: output_image.png" << std::endl;
                 }
             }
 
