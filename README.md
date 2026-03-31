@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Projeto 1 - Processamento Digital de Imagem (SDL3)
 
 Este projeto foi desenvolvido para a disciplina de Computação Visual. O software realiza a manipulação de pixels em tempo real para converter imagens coloridas, analisar seus dados estatísticos e aplicar melhorias de contraste.
@@ -30,3 +31,4 @@ g++ src/*.cpp -I include -o programa -lSDL3 -lSDL3_image
 
 ### Passo 2: Execução 
 ./programa assets/teste.jpg
+=======
