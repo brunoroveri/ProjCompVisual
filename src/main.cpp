@@ -31,7 +31,7 @@ int main(int argc, char* argv[]) {
     data.equalizedGray = criarEqualizada(data.originalGray, data.histograma);
 
     // --- CONFIGURAÇÃO DAS JANELAS ---
-    SDL_Window* winMain = SDL_CreateWindow("Principal (Pressione S para Salvar)", data.originalGray->w, data.originalGray->h, 0);
+    SDL_Window* winMain = SDL_CreateWindow("Visualizacao da Imagem (Pressione S para salvar)", data.originalGray->w, data.originalGray->h, 0);
     SDL_SetWindowPosition(winMain, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED);
     SDL_Renderer* renMain = SDL_CreateRenderer(winMain, NULL);
 
