@@ -105,8 +105,8 @@ int main(int argc, char* argv[]) {
 
         // Desenha o Botão conforme o estado
         if(btnState == 0) SDL_SetRenderDrawColor(renSec, 0, 170, 90, 255);
-        else if(btnState == 1) SDL_SetRenderDrawColor(renSec, 100, 100, 255, 255);
-        else SDL_SetRenderDrawColor(renSec, 0, 0, 150, 255);
+        else if(btnState == 1) SDL_SetRenderDrawColor(renSec, 60, 200, 120, 255);
+        else SDL_SetRenderDrawColor(renSec, 0, 120, 60, 255);
         
         SDL_RenderFillRect(renSec, &btn);
         SDL_RenderPresent(renSec);
