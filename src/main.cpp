@@ -44,7 +44,7 @@ int main(int argc, char* argv[]) {
 
     bool running = true;
     SDL_Event ev;
-    SDL_FRect btn = {100, 380, 200, 40};
+    SDL_FRect btn = {100, 390, 200, 36};
     int btnState = 0;
 
     // --- LOOP PRINCIPAL ---
