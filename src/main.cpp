@@ -37,7 +37,7 @@ int main(int argc, char* argv[]) {
 
     int mx, my; 
     SDL_GetWindowPosition(winMain, &mx, &my);
-    SDL_Window* winSec = SDL_CreateWindow("Histograma e Controles", 400, 450, 0);
+    SDL_Window* winSec = SDL_CreateWindow("Estatisticas da Imagem", 400, 450, 0);
     SDL_SetWindowPosition(winSec, mx + data.originalGray->w + 10, my);
     SDL_SetWindowParent(winSec, winMain); 
     SDL_Renderer* renSec = SDL_CreateRenderer(winSec, NULL);
