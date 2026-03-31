@@ -22,13 +22,13 @@ void calcularDados(SDL_Surface* surface, AppData& data) {
     //total de pixel
     int total = surface->w * surface->h;
 
- // 1. Contagem do Histograma e Soma para Média
-    for (int y = 0; y < surface->h; y++) {
-        for (int x = 0; x < surface->w; x++) {
-            uint8_t r, g, b, a;
-            SDL_ReadSurfacePixel(surface, x, y, &r, &g, &b, &a);
-            data.histograma[r]++;
-            soma += r;
+         // 1. Contagem do Histograma e Soma para Média
+        for (int y = 0; y < surface->h; y++) {
+            for (int x = 0; x < surface->w; x++) {
+                uint8_t r, g, b, a;
+                SDL_ReadSurfacePixel(surface, x, y, &r, &g, &b, &a);
+                data.histograma[r]++;
+                soma += r;
         }
     }
 
@@ -36,27 +36,27 @@ void calcularDados(SDL_Surface* surface, AppData& data) {
 data.media = (float)(soma / total);
 
 
- // 3. Cálculo da Variância e Desvio Padrão 
-    //variancia em zero
-    double variancia = 0;
-    for(int i=0; i<256; i++) {
-        if(data.histograma[i] > data.maxHist) data.maxHist = data.histograma[i];
-        variancia += data.histograma[i] * pow(i - data.media, 2);
+// 3. Cálculo da Variância e Desvio Padrão 
+//variancia em zero
+double variancia = 0;
+for(int i=0; i<256; i++) {
+    if(data.histograma[i] > data.maxHist) data.maxHist = data.histograma[i];
+    variancia += data.histograma[i] * pow(i - data.media, 2);
     }
-    data.desvio = sqrt(variancia / total);
-
-    std::string brilho = (data.media < 85) ? "Escura" : (data.media > 170) ? "Clara" : "Media";
-    std::string contraste = (data.desvio < 30) ? "Baixo" : (data.desvio > 70) ? "Alto" : "Medio";
-
-    // EXIBIÇÃO NO TERMINAL 
-    std::cout << "\n========================================" << std::endl;
-    std::cout << " ANALISE DA IMAGEM ATUAL " << std::endl;
-    std::cout << "========================================" << std::endl;
-    //media
-    std::cout << "Media de Intensidade: " << data.media << " -> " << brilho << std::endl;
-    //desvio
-    std::cout << "Desvio Padrao:        " << data.desvio << " -> Contraste " << contraste << std::endl;
-    std::cout << "========================================\n" << std::endl;
+        data.desvio = sqrt(variancia / total);
+    
+        std::string brilho = (data.media < 85) ? "Escura" : (data.media > 170) ? "Clara" : "Media";
+        std::string contraste = (data.desvio < 30) ? "Baixo" : (data.desvio > 70) ? "Alto" : "Medio";
+    
+        // EXIBIÇÃO NO TERMINAL 
+        std::cout << "\n========================================" << std::endl;
+        std::cout << " ANALISE DA IMAGEM ATUAL " << std::endl;
+        std::cout << "========================================" << std::endl;
+        //media
+        std::cout << "Media de Intensidade: " << data.media << " -> " << brilho << std::endl;
+        //desvio
+        std::cout << "Desvio Padrao:        " << data.desvio << " -> Contraste " << contraste << std::endl;
+        std::cout << "========================================\n" << std::endl;
 }
 
 SDL_Surface* criarEqualizada(SDL_Surface* original, uint32_t* hist) {
@@ -66,10 +66,10 @@ SDL_Surface* criarEqualizada(SDL_Surface* original, uint32_t* hist) {
     //veto CDF
     float cdf[256], somaAcumulada = 0;
     
-    // CDF com as frequências normalizadas do histograma
-    for(int i=0; i<256; i++) {
-        somaAcumulada += (float)hist[i] / total;
-        cdf[i] = somaAcumulada;
+        // CDF com as frequências normalizadas do histograma
+        for(int i=0; i<256; i++) {
+            somaAcumulada += (float)hist[i] / total;
+            cdf[i] = somaAcumulada;
     }
 
     //perciorre a nova imagem 
@@ -81,5 +81,5 @@ SDL_Surface* criarEqualizada(SDL_Surface* original, uint32_t* hist) {
             SDL_WriteSurfacePixel(surf, x, y, novoTom, novoTom, novoTom, a);
         }
     }
-    return surf;
+        return surf;
 }
