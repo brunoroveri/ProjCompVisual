@@ -91,7 +91,7 @@ int main(int argc, char* argv[]) {
         SDL_DestroyTexture(tex);
 
         // --- RENDERIZAÇÃO JANELA SECUNDÁRIA ---
-        SDL_SetRenderDrawColor(renSec, 35, 35, 35, 255);
+        SDL_SetRenderDrawColor(renSec, 28, 28, 28, 255);
         SDL_RenderClear(renSec);
         
         // Desenha o Histograma
