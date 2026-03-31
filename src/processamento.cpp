@@ -28,6 +28,7 @@ void calcularDados(SDL_Surface* surface, AppData& data) {
             uint8_t r, g, b, a;
             SDL_ReadSurfacePixel(surface, x, y, &r, &g, &b, &a);
             data.histograma[r]++;
+            soma += r;
         }
     }
 
