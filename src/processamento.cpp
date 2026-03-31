@@ -69,17 +69,7 @@ SDL_Surface* criarEqualizada(SDL_Surface* original, uint32_t* hist) {
         // CDF com as frequências normalizadas do histograma
         for(int i=0; i<256; i++) {
             somaAcumulada += (float)hist[i] / total;
-            cdf[i] = somaAcumulada;
+        //teste
     }
 
-    //perciorre a nova imagem 
-    for (int y = 0; y < surf->h; y++) {
-        for (int x = 0; x < surf->w; x++) {
-            uint8_t r, g, b, a;
-            SDL_ReadSurfacePixel(surf, x, y, &r, &g, &b, &a);
-            uint8_t novoTom = (uint8_t)(cdf[r] * 255);
-            SDL_WriteSurfacePixel(surf, x, y, novoTom, novoTom, novoTom, a);
-        }
-    }
-        return surf;
-}
+
